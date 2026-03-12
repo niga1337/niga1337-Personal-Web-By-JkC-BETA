@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Hub - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: #000000 !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- 靈動島音樂播放器 -->
+    <div class="dynamic-island" id="dynamicIsland">
+        <div class="island-content">
+            <div class="island-music">
+                <div class="music-icon">♪</div>
+                <div class="music-info">
+                    <div class="music-title">Now Playing</div>
+                    <div class="music-artist">Chicken Hub Music</div>
+                </div>
+            </div>
+            <div class="island-control">
+                <button class="control-btn play-btn" id="playBtn">▶</button>
+            </div>
+        </div>
+        <div class="island-expanded" id="islandExpanded">
+            <div class="expanded-header">
+                <h3>Spotify Now Playing</h3>
+                <button class="close-btn" id="closeBtn">✕</button>
+            </div>
+            <div class="album-art" id="albumArt">
+                <div class="album-placeholder">♪</div>
+            </div>
+            <div class="track-info">
+                <h2 id="trackTitle">Beautiful Chicken Song</h2>
+                <p id="trackArtist">Chicken Hub Orchestra</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+                <input type="range" id="progressSlider" min="0" max="100" value="0">
+            </div>
+            <div class="time-display">
+                <span id="currentTime">0:00</span>
+                <span id="duration">3:45</span>
+            </div>
+            <div class="player-controls">
+                <button class="control-btn large-btn" id="prevBtn">⏮</button>
+                <button class="control-btn large-btn play-toggle" id="playToggle">▶</button>
+                <button class="control-btn large-btn" id="nextBtn">⏭</button>
+            </div>
+            <div class="volume-control">
+                <span>🔊</span>
+                <input type="range" id="volumeSlider" min="0" max="100" value="70">
+                <span>🔔</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 液体背景 -->
+    <div class="liquid-bg">
+        <div class="liquid-blob blob-1"></div>
+        <div class="liquid-blob blob-2"></div>
+        <div class="liquid-blob blob-3"></div>
+        <div class="liquid-blob blob-4"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="content-wrapper">
+        <!-- 导航栏 -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <span class="logo-chicken">CHICKEN</span>
+                    <span class="logo-hub">hub</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#work" class="nav-link">Videos</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hey, Welcome to <span class="highlight">Chicken Hub</span>
+                </h1>
+                <p class="hero-subtitle">
+                    A video website specifically for the enjoyment of Big Black CoCks.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get Some Huge Chicken?</a>
+                    <a href="#work" class="btn btn-secondary">Wanna View My Fancy Chicken?</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-container">
+                    <img src="images/chicken-avatar.jpg" alt="Chicken Hub" class="avatar-img">
+                    <div class="avatar-glow"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About This websites</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-column">
+                        <p class="text-large">
+                            A video website specifically for the enjoyment of big black CoCks.
+This platform is dedicated to people who appreciate the beauty, behavior, and unique characteristics of large black-feathered roosters. Through curated videos, viewers can observe different breeds, watch their daily activities, and learn more about their habits, movements, and personalities.
+                        </p>
+                    </div>
+                    <div class="about-column">
+                        <p>
+                            The site brings together poultry enthusiasts, farmers, and curious viewers who enjoy observing these impressive birds. Content may include slow-motion footage of roosters in motion, recordings of their morning calls, and videos that highlight their striking plumage and strong presence in farm environments.
+                        </p>
+                        <p>
+                            In addition to entertainment, the website also aims to promote knowledge about rooster care, breed diversity, and responsible poultry keeping. By sharing high-quality footage and educational clips, the platform helps viewers better understand and appreciate these remarkable animals.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <h3>67+</h3>
+                        <p>Chicken Corn Videos Projects Completed</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>6969+</h3>
+                        <p>Hex Skills Mastered</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>100%</h3>
+                        <p>Passion & Dedication</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="work">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Most Rating Videos</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="work-grid">
+                    <!-- 项目 1 -->
+                    <article class="work-card">
+                        <div class="work-image">
+                            <a href="https://youtu.be/OLOpCSlLcWo?si=sI7bg7vARVqPDwob" target="_blank" class="video-link">
+                                <img src="images/sexy-kfc.jpg" alt="Top 1 Corn Movie in Chicken Hub" style="width: 100%; height: 250px; object-fit: cover;">
+                                <div class="play-button">▶</div>
+                            </a>
+                        </div>
+                        <div class="work-content">
+                            <h3>Top 1 Corn Movie in CHicken Hub</h3>
+                            <p>Dedicated sections introducing notable rooster breeds, including their physical characteristics, temperament, and historical background.</p>
+                            <div class="work-tags">
+                                <span class="tag">Corn Master</span>
+                                <span class="tag">Rizz W</span>
+                                <span class="tag">Top</span>
+                            </div>
+                            <a href="https://youtu.be/OLOpCSlLcWo?si=sI7bg7vARVqPDwob" target="_blank" class="work-link">View Corn →</a>
+                        </div>
+                    </article>
+
+                    <!-- 项目 2 -->
+                    <article class="work-card">
+                        <div class="work-image">
+                            <a href="https://youtu.be/CBEvfZu4HE4?si=1tPmz8ACmHDjkQPF" target="_blank" class="video-link">
+                                <img src="images/roasted-chicken.jpg" alt="Roasted Hexy Chicken" style="width: 100%; height: 250px; object-fit: cover;">
+                                <div class="play-button">▶</div>
+                            </a>
+                        </div>
+                        <div class="work-content">
+                            <h3>Roasted Hexy Chicken</h3>
+                            <p>Our roasted chicken is prepared with a carefully balanced blend of herbs and spices, then slow-roasted to achieve a crisp golden skin and tender, flavorful meat. Each serving is cooked to highlight the natural richness of the chicken while maintaining a juicy texture.</p>
+                            <div class="work-tags">
+                                <span class="tag">Mature</span>
+                                <span class="tag">Higher Age</span>
+                                <span class="tag">Mommy</span>
+                            </div>
+                            <a href="https://youtu.be/CBEvfZu4HE4?si=1tPmz8ACmHDjkQPF" target="_blank" class="work-link">View Corn →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Skills & Expertise</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>👺 Performance</h3>
+                        <ul>
+                            <li>Ultra-long lasting</li>
+                            <li>Strong physique</li>
+                            <li>Enhanced length</li>
+                            <li>World-renowned porn stars</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>👀 HD Photography</h3>
+                        <ul>
+                            <li>HD</li>
+                            <li>Uncensored</li>
+                            <li>NSFW</li>
+                            <li>Sigma boy</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🥵 SM Corn Skill</h3>
+                        <ul>
+                            <li>TOP SM Skill</li>
+                            <li>Tease</li>
+                            <li>HOT</li>
+                            <li>Sexy</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>😈 Fancy Exprience</h3>
+                        <ul>
+                            <li>Virgin</li>
+                            <li>Exposure in the wild</li>
+                            <li>Call me Daddy</li>
+                            <li>Oh~Yes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <p class="contact-intro">
+                    Have Porns? I'd love to hear about it. Send me a message and let's create something amazing together.
+                </p>
+
+                <div class="contact-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Mr.CoCK</label>
+                            <input type="text" id="name" name="name" placeholder="Mr.CoCk" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="Cocks@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your Porn..." rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+                        <div class="form-status" id="formStatus"></div>
+                    </form>
+
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <h4>📧 Email</h4>
+                            <a href="mailto:h310117@victoria.ylc.edu.tw">h310117@victoria.ylc.edu.tw</a>
+                        </div>
+                        <div class="info-item">
+                            <h4>📱 Phone</h4>
+                            <a href="tel:+886967676767">+886 967676767</a>
+                        </div>
+                        <div class="info-item">
+                            <h4>🌍 Location</h4>
+                            <p>Japan</p>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-icon" title="GitHub">GitHub</a>
+                            <a href="#" class="social-icon" title="LinkedIn">LinkedIn</a>
+                            <a href="#" class="social-icon" title="Twitter">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 Chicken Hub. Crafted with passion. All rights reserved. Made By Jack Chang</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 隱藏音頻元素 -->
+    <audio id="audioPlayer"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
