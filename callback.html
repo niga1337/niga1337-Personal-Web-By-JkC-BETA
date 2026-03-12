@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Callback - Chicken Hub</title>
+    <style>
+        body {
+            background: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #ffffff;
+        }
+        
+        .loading {
+            text-align: center;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(29, 185, 84, 0.2);
+            border-top: 4px solid #1DB954;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        h1 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #1DB954;
+        }
+        
+        p {
+            color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="spinner"></div>
+        <h1>🎵 Authorizing...</h1>
+        <p>Connecting to Spotify</p>
+    </div>
+
+    <script>
+        // 檢查是否有authorization code
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        const error = urlParams.get('error');
+
+        if (error) {
+            document.body.innerHTML = `
+                <div style="text-align: center; color: #ff6b6b;">
+                    <h1>❌ Authorization Failed</h1>
+                    <p>Error: ${error}</p>
+                    <button onclick="window.location.href='/';" style="
+                        background: #1DB954;
+                        color: #000;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 20px;
+                        cursor: pointer;
+                        margin-top: 20px;
+                        font-weight: bold;
+                    ">
+                        Back to Home
+                    </button>
+                </div>
+            `;
+        } else if (code) {
+            // 將code發送到後端進行交換
+            const redirectUri = `${window.location.protocol}//${window.location.host}/callback.html`;
+            
+            fetch(`/api/spotify-callback?code=${code}&redirect_uri=${encodeURIComponent(redirectUri)}`)
+                .then(response => {
+                    // 後端會自動重定向，所以這裡應該自動跳轉
+                    window.location.href = '/';
+                })
+                .catch(err => {
+                    console.error('Error:', err);
+                    document.body.innerHTML = `
+                        <div style="text-align: center; color: #ff6b6b;">
+                            <h1>⚠️ Error</h1>
+                            <p>${err.message}</p>
+                            <button onclick="window.location.href='/';" style="
+                                background: #1DB954;
+                                color: #000;
+                                border: none;
+                                padding: 10px 20px;
+                                border-radius: 20px;
+                                cursor: pointer;
+                                margin-top: 20px;
+                                font-weight: bold;
+                            ">
+                                Back to Home
+                            </button>
+                        </div>
+                    `;
+                });
+        } else {
+            document.body.innerHTML = `
+                <div style="text-align: center; color: #ff6b6b;">
+                    <h1>⚠️ No Authorization Code</h1>
+                    <p>Unable to complete Spotify login</p>
+                    <button onclick="window.location.href='/';" style="
+                        background: #1DB954;
+                        color: #000;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 20px;
+                        cursor: pointer;
+                        margin-top: 20px;
+                        font-weight: bold;
+                    ">
+                        Back to Home
+                    </button>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
